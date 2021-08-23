@@ -27,6 +27,10 @@ We are decoupled from any HTTP messaging client with help by [HTTPlug](https://h
 
 ## Usage
 
+**Documentation**
+
+See the [`docs` directory](docs/) for more detailed documentation.
+
 **Basic usage**
 
 ```php
