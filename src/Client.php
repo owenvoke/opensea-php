@@ -12,6 +12,7 @@ use Http\Discovery\Psr17FactoryDiscovery;
 use OwenVoke\OpenSea\Api\AbstractApi;
 use OwenVoke\OpenSea\Api\Asset;
 use OwenVoke\OpenSea\Api\Bundle;
+use OwenVoke\OpenSea\Api\Collection;
 use OwenVoke\OpenSea\Exception\BadMethodCallException;
 use OwenVoke\OpenSea\Exception\InvalidArgumentException;
 use OwenVoke\OpenSea\HttpClient\Builder;
@@ -24,6 +25,8 @@ use Psr\Http\Client\ClientInterface;
  * @method Api\Asset assets()
  * @method Api\Bundle bundle()
  * @method Api\Bundle bundles()
+ * @method Api\Collection collection()
+ * @method Api\Collection collections()
  */
 final class Client
 {
@@ -70,6 +73,10 @@ final class Client
             case 'bundle':
             case 'bundles':
                 return new Bundle($this);
+
+            case 'collection':
+            case 'collections':
+                return new Collection($this);
 
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
