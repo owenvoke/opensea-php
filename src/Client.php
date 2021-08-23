@@ -14,6 +14,7 @@ use OwenVoke\OpenSea\Api\Asset;
 use OwenVoke\OpenSea\Api\Bundle;
 use OwenVoke\OpenSea\Api\Collection;
 use OwenVoke\OpenSea\Api\Contract;
+use OwenVoke\OpenSea\Api\Event;
 use OwenVoke\OpenSea\Exception\BadMethodCallException;
 use OwenVoke\OpenSea\Exception\InvalidArgumentException;
 use OwenVoke\OpenSea\HttpClient\Builder;
@@ -30,6 +31,8 @@ use Psr\Http\Client\ClientInterface;
  * @method Api\Collection collections()
  * @method Api\Contract contract()
  * @method Api\Contract contracts()
+ * @method Api\Event event()
+ * @method Api\Event events()
  */
 final class Client
 {
@@ -84,6 +87,10 @@ final class Client
             case 'contract':
             case 'contracts':
                 return new Contract($this);
+
+            case 'event':
+            case 'events':
+                return new Event($this);
 
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
