@@ -5,6 +5,7 @@ declare(strict_types=1);
 use OwenVoke\OpenSea\Api\Asset;
 use OwenVoke\OpenSea\Api\Bundle;
 use OwenVoke\OpenSea\Api\Collection;
+use OwenVoke\OpenSea\Api\Contract;
 use OwenVoke\OpenSea\Client;
 
 it('gets instances from the client', function () {
@@ -18,9 +19,13 @@ it('gets instances from the client', function () {
     expect($client->bundle())->toBeInstanceOf(Bundle::class);
     expect($client->bundles())->toBeInstanceOf(Bundle::class);
 
-    // Retrieves Bundle instance
+    // Retrieves Collection instance
     expect($client->collection())->toBeInstanceOf(Collection::class);
     expect($client->collections())->toBeInstanceOf(Collection::class);
+
+    // Retrieves Contract instance
+    expect($client->contract())->toBeInstanceOf(Contract::class);
+    expect($client->contracts())->toBeInstanceOf(Contract::class);
 });
 
 it('allows setting a custom url', function () {
