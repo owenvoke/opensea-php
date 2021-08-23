@@ -1,0 +1,48 @@
+{
+    "name": "owenvoke/opensea",
+    "type": "library",
+    "description": "An object oriented PHP wrapper for the OpenSea API",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "php-http/client-common": "^2.3",
+        "php-http/discovery": "^1.12",
+        "php-http/httplug": "^2.2",
+        "php-http/multipart-stream-builder": "^1.1",
+        "psr/http-client-implementation": "^1.0",
+        "psr/http-factory-implementation": "^1.0",
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.2.0",
+        "guzzlehttp/psr7": "^1.6",
+        "http-interop/http-factory-guzzle": "^1.0",
+        "pestphp/pest": "^1.12",
+        "php-http/mock-client": "^1.4",
+        "phpstan/phpstan": "^0.12.81",
+        "symfony/var-dumper": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "OwenVoke\\OpenSea\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OwenVoke\\OpenSea\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test:types": "phpstan analyse --ansi --memory-limit=-1",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
