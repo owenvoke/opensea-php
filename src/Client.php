@@ -10,6 +10,7 @@ use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use OwenVoke\OpenSea\Api\AbstractApi;
+use OwenVoke\OpenSea\Api\Asset;
 use OwenVoke\OpenSea\Exception\BadMethodCallException;
 use OwenVoke\OpenSea\Exception\InvalidArgumentException;
 use OwenVoke\OpenSea\HttpClient\Builder;
@@ -17,6 +18,10 @@ use OwenVoke\OpenSea\HttpClient\Plugin\Authentication;
 use OwenVoke\OpenSea\HttpClient\Plugin\PathPrepend;
 use Psr\Http\Client\ClientInterface;
 
+/**
+ * @method Api\Asset asset()
+ * @method Api\Asset assets()
+ */
 final class Client
 {
     public const AUTH_ACCESS_TOKEN = 'access_token_header';
@@ -55,6 +60,10 @@ final class Client
     public function api(string $name): AbstractApi
     {
         switch ($name) {
+            case 'asset':
+            case 'assets':
+                return new Asset($this);
+
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
         }
