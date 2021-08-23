@@ -11,6 +11,7 @@ use Http\Client\Common\Plugin\RedirectPlugin;
 use Http\Discovery\Psr17FactoryDiscovery;
 use OwenVoke\OpenSea\Api\AbstractApi;
 use OwenVoke\OpenSea\Api\Asset;
+use OwenVoke\OpenSea\Api\Bundle;
 use OwenVoke\OpenSea\Exception\BadMethodCallException;
 use OwenVoke\OpenSea\Exception\InvalidArgumentException;
 use OwenVoke\OpenSea\HttpClient\Builder;
@@ -21,6 +22,8 @@ use Psr\Http\Client\ClientInterface;
 /**
  * @method Api\Asset asset()
  * @method Api\Asset assets()
+ * @method Api\Bundle bundle()
+ * @method Api\Bundle bundles()
  */
 final class Client
 {
@@ -63,6 +66,10 @@ final class Client
             case 'asset':
             case 'assets':
                 return new Asset($this);
+
+            case 'bundle':
+            case 'bundles':
+                return new Bundle($this);
 
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
