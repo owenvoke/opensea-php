@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\OpenSea\Api\Asset;
 
-beforeEach(fn() => $this->apiClass = Asset::class);
+beforeEach(fn () => $this->apiClass = Asset::class);
 
 it('should show a list of assets', function () {
     $expectedArray = ['assets' => [['id' => 1]]];

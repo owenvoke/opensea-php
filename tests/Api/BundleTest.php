@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\OpenSea\Api\Bundle;
 
-beforeEach(fn() => $this->apiClass = Bundle::class);
+beforeEach(fn () => $this->apiClass = Bundle::class);
 
 it('should show a list of bundles', function () {
     $expectedArray = ['bundles' => [['id' => 1]]];

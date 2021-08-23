@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use OwenVoke\OpenSea\Api\Collection;
 
-beforeEach(fn() => $this->apiClass = Collection::class);
+beforeEach(fn () => $this->apiClass = Collection::class);
 
 it('should show a list of collections', function () {
     $expectedArray = ['collections' => [['id' => 1]]];
