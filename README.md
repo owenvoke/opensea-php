@@ -38,7 +38,7 @@ See the [`docs` directory](docs/) for more detailed documentation.
 require_once __DIR__ . '/vendor/autoload.php';
 
 $client = new \OwenVoke\OpenSea\Client();
-$repositories = $client->assets()->all();
+$assets = $client->assets()->all();
 ```
 
 **Authentication**

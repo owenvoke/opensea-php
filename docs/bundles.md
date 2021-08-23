@@ -7,10 +7,10 @@ Allows interacting with the [Bundles API](https://docs.opensea.io/reference/retr
 ### Get a list of bundles
 
 ```php
-// Retrieve a standard list of assets with the default parameters
+// Retrieve a standard list of bundles with the default parameters
 $response = $client->bundles()->all();
 
-// Retrieve a custom list of assets using parameters
+// Retrieve a custom list of bundles using parameters
 $response = $client->bundles()->all([
     'owner' => 'owners_address_here',
 ]);
