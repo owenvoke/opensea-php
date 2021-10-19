@@ -14,7 +14,7 @@ final class PathPrepend implements Plugin
     private string $path;
 
     /**
-     * @param string $path
+     * @param  string  $path
      */
     public function __construct($path)
     {

@@ -18,9 +18,9 @@ final class Authentication implements Plugin
     private ?string $method;
 
     /**
-     * @param string      $tokenOrLogin OpenSea private token/username/client ID
-     * @param string|null $password     OpenSea password/secret (optionally can contain $method)
-     * @param string|null $method       One of the AUTH_* class constants
+     * @param  string  $tokenOrLogin  OpenSea private token/username/client ID
+     * @param  string|null  $password  OpenSea password/secret (optionally can contain $method)
+     * @param  string|null  $method  One of the AUTH_* class constants
      */
     public function __construct(string $tokenOrLogin, ?string $password, ?string $method)
     {

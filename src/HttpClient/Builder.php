@@ -63,8 +63,7 @@ final class Builder
     /**
      * Add a new plugin to the end of the plugin chain.
      *
-     * @param Plugin $plugin
-     *
+     * @param  Plugin  $plugin
      * @return void
      */
     public function addPlugin(Plugin $plugin)
@@ -76,8 +75,7 @@ final class Builder
     /**
      * Remove a plugin by its fully qualified class name (FQCN).
      *
-     * @param string $fqcn
-     *
+     * @param  string  $fqcn
      * @return void
      */
     public function removePlugin($fqcn)
@@ -104,8 +102,7 @@ final class Builder
     }
 
     /**
-     * @param array $headers
-     *
+     * @param  array  $headers
      * @return void
      */
     public function addHeaders(array $headers)
@@ -117,9 +114,8 @@ final class Builder
     }
 
     /**
-     * @param string $header
-     * @param string $headerValue
-     *
+     * @param  string  $header
+     * @param  string  $headerValue
      * @return void
      */
     public function addHeaderValue($header, $headerValue)
