@@ -9,6 +9,7 @@ use ReflectionMethod;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
+    /** @var class-string */
     protected string $apiClass;
 
     protected function getApiMock(): MockObject
